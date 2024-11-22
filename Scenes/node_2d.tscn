@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm8pyh5to5gtw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ehp0m"]
+
+[sub_resource type="Theme" id="Theme_5bigm"]
+default_font_size = 64
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 30.0
+offset_bottom = 30.0
+icon = SubResource("CanvasTexture_ehp0m")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme = SubResource("Theme_5bigm")
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "HI"
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "HI"
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "HI"
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "HI"
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "HI"
