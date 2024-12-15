@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkqw4ujd0mbjh"]
+
+[ext_resource type="Script" path="res://Scenes/Notes_container.gd" id="1_eykbn"]
+[ext_resource type="PackedScene" uid="uid://cqqjlhrp3c1gq" path="res://Scenes/MusicNote.tscn" id="2_fgc5v"]
+
+[node name="Notes" type="VBoxContainer"]
+script = ExtResource("1_eykbn")
+Music_note = ExtResource("2_fgc5v")

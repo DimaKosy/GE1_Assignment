@@ -5,6 +5,7 @@ extends VBoxContainer
 @export var count_y = 20
 @export var recorder:PackedScene
 @export var recorder_theme:Theme
+var Toggled_buttons = []
 
 
 

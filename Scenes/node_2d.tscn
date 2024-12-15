@@ -1,16 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm8pyh5to5gtw"]
+[gd_scene load_steps=12 format=3 uid="uid://dm8pyh5to5gtw"]
 
 [ext_resource type="Script" path="res://Scenes/container.gd" id="1_1jdty"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_un8u7"]
 [ext_resource type="Script" path="res://Scenes/Grid.gd" id="2_glqmj"]
 [ext_resource type="PackedScene" uid="uid://btown6cycpw4d" path="res://Scenes/Recorder.tscn" id="2_icd4i"]
 [ext_resource type="Script" path="res://Scenes/h_box_container.gd" id="2_ohsgm"]
 [ext_resource type="Script" path="res://Scenes/scroll_container.gd" id="3_e6njh"]
+[ext_resource type="Script" path="res://Scenes/MusicArea.gd" id="3_tbw5y"]
+[ext_resource type="PackedScene" uid="uid://dkqw4ujd0mbjh" path="res://Scenes/Notes.tscn" id="4_xeo7n"]
 [ext_resource type="Theme" uid="uid://1p4x33hhj6ub" path="res://Materials/button_round.tres" id="6_ajj6s"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_x8uqv"]
 
 [sub_resource type="Theme" id="Theme_5bigm"]
 default_font_size = 64
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_un8u7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamGenerator_x8uqv")
+autoplay = true
+playback_type = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -31,23 +42,27 @@ layout_mode = 2
 alignment = 1
 script = ExtResource("2_ohsgm")
 
-[node name="Button" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+[node name="Play" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-text = "Save"
+text = "Play
+"
 
-[node name="Button3" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+[node name="Record" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-text = "Save"
+text = "Record"
 
-[node name="Button2" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+[node name="Clear" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+text = "Clear"
 
 [node name="Container" type="Container" parent="Container/VBoxContainer"]
 custom_minimum_size = Vector2(920, 960)
 layout_mode = 2
+script = ExtResource("3_tbw5y")
+MusicScene = ExtResource("4_xeo7n")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_left = -940.0
