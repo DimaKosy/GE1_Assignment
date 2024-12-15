@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm8pyh5to5gtw"]
+[gd_scene load_steps=8 format=3 uid="uid://dm8pyh5to5gtw"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ehp0m"]
+[ext_resource type="Script" path="res://Scenes/container.gd" id="1_1jdty"]
+[ext_resource type="Script" path="res://Scenes/Grid.gd" id="2_glqmj"]
+[ext_resource type="PackedScene" uid="uid://btown6cycpw4d" path="res://Scenes/Recorder.tscn" id="2_icd4i"]
+[ext_resource type="Script" path="res://Scenes/h_box_container.gd" id="2_ohsgm"]
+[ext_resource type="Script" path="res://Scenes/scroll_container.gd" id="3_e6njh"]
+[ext_resource type="Theme" uid="uid://1p4x33hhj6ub" path="res://Materials/button_round.tres" id="6_ajj6s"]
 
 [sub_resource type="Theme" id="Theme_5bigm"]
 default_font_size = 64
@@ -9,37 +14,51 @@ default_font_size = 64
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Button" type="Button" parent="."]
-offset_right = 30.0
-offset_bottom = 30.0
-icon = SubResource("CanvasTexture_ehp0m")
+[node name="Container" type="Container" parent="."]
+offset_left = 20.0
+offset_top = -520.0
+offset_right = 940.0
+offset_bottom = 520.0
+script = ExtResource("1_1jdty")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+custom_minimum_size = Vector2(920, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(920, 120)
+layout_mode = 2
+alignment = 1
+script = ExtResource("2_ohsgm")
+
+[node name="Button" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Save"
+
+[node name="Button3" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Save"
+
+[node name="Button2" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Container" type="Container" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(920, 960)
+layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_left = -940.0
+offset_top = -520.0
+offset_right = -20.0
+offset_bottom = 520.0
+script = ExtResource("3_e6njh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 theme = SubResource("Theme_5bigm")
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HI"
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HI"
-
-[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HI"
-
-[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HI"
-
-[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "HI"
+script = ExtResource("2_glqmj")
+recorder = ExtResource("2_icd4i")
+recorder_theme = ExtResource("6_ajj6s")
