@@ -2,6 +2,8 @@
 
 "A Holographic Musical Toy" 
 
+
+### Feature list
 + Touch input
 + Android porting
 + Music notes
@@ -15,7 +17,16 @@
 + Playing multiple notes at once
     * <Godot uses mouse emulation for touch, unable To do with redesign>
 
+### Known Issues
++ Recorder doesnt work as I wasnt able to make threads/async work with AudioStreamGenerator
+    *(Will keep running and crash)
++ Only single press at a time due to how godot handles inout by default, would have required a redesign
++ Notes will be static-ky towards the end, possible due to too bad samplerate or buffer size
 
+
+
+### UML
+![](Files/uml.jpg)
 
 
 
