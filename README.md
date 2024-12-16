@@ -27,7 +27,9 @@
 ### Video
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/cGy-3mxGzUU/0.jpg)](https://www.youtube.com/watch?v=cGy-3mxGzUU)
 
-
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=cGy-3mxGzUU
+" target="_blank"><img src="http://img.youtube.com/vi/cGy-3mxGzUU/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ### UML
 ![](Files/uml.jpg)
