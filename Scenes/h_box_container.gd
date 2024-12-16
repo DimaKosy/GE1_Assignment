@@ -14,10 +14,26 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func set_active_button(button: Button):
-	if active_button and active_button != button:  # Unpress the previous button
+	#checks to see if active button is the button
+	if active_button == button:
+		return
+	
+	if active_button:  # Unpress the previous button
 		active_button.button_pressed = false
+	
 	active_button = button  # Reassign active_button (mutable globally)
+	if active_button == $Clear:
+		print("Cleared")
+		return
 	active_button.button_pressed = true  # Press the new button
+
+func clear_active_button():
+	if active_button == null:
+		return
+	active_button.button_pressed = false
+	active_button = null
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

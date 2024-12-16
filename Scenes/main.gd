@@ -60,6 +60,10 @@ func play_saved():
 		pass
 	pass
 	
+func clear_active():
+	for b in $ScrollContainer/recorder_container.Toggled_buttons:
+		b.active_notes.clear()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame
 func _process(delta: float) -> void:
 	pass
