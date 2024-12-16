@@ -2,18 +2,18 @@
 
 "A Holographic Musical Toy" 
 
-Touch input
-Android porting
-Music notes
-Keys holding showing note and frequency 
-Music recorder
-Save
-Play
-Clear
-Concurrent playing of music Notes and Recorder
-States: Toggled, Saved, Empty
-Playing multiple notes at once
-<Godot uses mouse emulation for touch, unable To do with redesign>
++ Touch input
++ Android porting
++ Music notes
+⋅⋅* Keys holding showing note and frequency 
++ Music recorder
+⋅⋅* Save
+⋅⋅* Play
+⋅⋅* Clear
++ Concurrent playing of music Notes and Recorder
++ States: Toggled, Saved, Empty
++ Playing multiple notes at once
++ <Godot uses mouse emulation for touch, unable To do with redesign>
 
 
 
