@@ -16,6 +16,9 @@ func _ready() -> void:
 func set_active_button(button: Button):
 	#checks to see if active button is the button
 	if active_button == button:
+		if active_button == $Play:
+			get_tree().root.get_child(0).playing(active_button.button_pressed)
+			print("Play")
 		return
 	
 	if active_button:  # Unpress the previous button
@@ -25,6 +28,9 @@ func set_active_button(button: Button):
 	if active_button == $Clear:
 		print("Cleared")
 		return
+	if active_button == $Record:
+		get_tree().root.get_child(0).playing(false)
+		
 	active_button.button_pressed = true  # Press the new button
 
 func clear_active_button():

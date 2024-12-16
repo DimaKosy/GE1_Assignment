@@ -6,7 +6,7 @@ extends Button
 var button_list:Array
 var timer:Timer
 var playing:bool = false
-
+var finished = true
 
 var sample_hz = 44100.0  # Sample rate
 var playback: AudioStreamPlayback = null  # Actual playback stream, assigned in _ready()
@@ -26,7 +26,7 @@ func _ready() -> void:
 	$AudioStreamPlayer.play()
 	playback = $AudioStreamPlayer.get_stream_playback()
 	print($AudioStreamPlayer)
-	
+	$AudioStreamPlayer.connect("finished", Callable(self, "_on_AudioStreamPlayer_finished"))
 	
 	self.theme.set_stylebox("normal", "Button", Style_unsaved)  # Modify the theme
 	self.theme.set_stylebox("hover", "Button", Style_unsaved)  # Modify the theme
@@ -34,6 +34,8 @@ func _ready() -> void:
 	button_list = get_parent().get_parent().Toggled_buttons	
 	pass # Replace with function body.
 
+func _on_AudioStreamPlayer_finished():
+	finished = true
 
 func play(delta):
 	print("Playing:")
@@ -81,7 +83,12 @@ func play_tones(frequencies: Array, duration: float):
 func _process(delta: float) -> void:
 	
 	if playing:
-		play(delta)
+		#print(finished)
+		#if finished:
+			
+		play(delta*2)
+		#finished = true
+		
 		
 	
 	pass
