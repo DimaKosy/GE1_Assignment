@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm8pyh5to5gtw"]
+[gd_scene load_steps=14 format=3 uid="uid://dm8pyh5to5gtw"]
 
 [ext_resource type="Script" path="res://Scenes/container.gd" id="1_1jdty"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_un8u7"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Scenes/h_box_container.gd" id="2_ohsgm"]
 [ext_resource type="Script" path="res://Scenes/scroll_container.gd" id="3_e6njh"]
 [ext_resource type="Script" path="res://Scenes/MusicArea.gd" id="3_tbw5y"]
+[ext_resource type="Script" path="res://Scenes/play_button.gd" id="4_1cs35"]
+[ext_resource type="Script" path="res://Scenes/control_buttons.gd" id="4_x4gmd"]
 [ext_resource type="PackedScene" uid="uid://dkqw4ujd0mbjh" path="res://Scenes/Notes.tscn" id="4_xeo7n"]
 [ext_resource type="Theme" uid="uid://1p4x33hhj6ub" path="res://Materials/button_round.tres" id="6_ajj6s"]
 
@@ -45,20 +47,26 @@ script = ExtResource("2_ohsgm")
 [node name="Play" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+toggle_mode = true
 text = "Play
 "
+script = ExtResource("4_1cs35")
 
 [node name="Record" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+toggle_mode = true
 text = "Record"
+script = ExtResource("4_x4gmd")
 
 [node name="Clear" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+toggle_mode = true
 text = "Clear"
+script = ExtResource("4_x4gmd")
 
-[node name="Container" type="Container" parent="Container/VBoxContainer"]
+[node name="keys_container" type="Container" parent="Container/VBoxContainer"]
 custom_minimum_size = Vector2(920, 960)
 layout_mode = 2
 script = ExtResource("3_tbw5y")
@@ -71,7 +79,7 @@ offset_right = -20.0
 offset_bottom = 520.0
 script = ExtResource("3_e6njh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="recorder_container" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 theme = SubResource("Theme_5bigm")
 script = ExtResource("2_glqmj")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://btown6cycpw4d"]
+
+[ext_resource type="Theme" uid="uid://1p4x33hhj6ub" path="res://Materials/button_round.tres" id="1_owjim"]
+[ext_resource type="Script" path="res://Scenes/recorder.gd" id="2_dcviy"]
+[ext_resource type="Texture2D" uid="uid://ddaw7liiqgk7i" path="res://Materials/Button.png" id="2_rsxx8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xgynw"]
+texture = ExtResource("2_rsxx8")
+modulate_color = Color(1, 0.45098, 0.105882, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47fif"]
+texture = ExtResource("2_rsxx8")
+modulate_color = Color(1, 1, 0, 1)
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_i3h5e"]
+
+[node name="Recorder" type="Button"]
+offset_right = 240.0
+offset_bottom = 240.0
+focus_mode = 0
+theme = ExtResource("1_owjim")
+toggle_mode = true
+script = ExtResource("2_dcviy")
+Style_saved = SubResource("StyleBoxTexture_xgynw")
+Style_unsaved = SubResource("StyleBoxTexture_47fif")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamGenerator_i3h5e")

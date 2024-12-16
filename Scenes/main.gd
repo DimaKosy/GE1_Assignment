@@ -15,11 +15,21 @@ func _ready() -> void:
 	print($AudioStreamPlayer)
 
 	# Play multiple notes at the same time
-	play_tones([110], 5)  # Frequencies for A4, C5, E5 for 5 seconds
-	$AudioStreamPlayer.stop()
+	#play_tones([110], 10)  # Frequencies for A4, C5, E5 for 5 seconds
+	#$AudioStreamPlayer.stop()
 
 # Function to play multiple tones simultaneously (polyphony)
 func play_tones(frequencies: Array, duration: float):
+	
+	if($Container/VBoxContainer/HBoxContainer.active_button == $Container/VBoxContainer/HBoxContainer/Record):
+		for b in $ScrollContainer/recorder_container.Toggled_buttons:
+			var note = [frequencies, duration]
+			
+			b.active_notes.append(note)
+			print(b.active_notes)
+			pass
+		pass
+	
 	var samples = int(sample_hz * duration)
 
 	for start in range(0, samples, chunk_size):
@@ -44,6 +54,12 @@ func play_tones(frequencies: Array, duration: float):
 		if chunk.size() > 0:
 			playback.push_buffer(chunk)
 
+func play_saved():
+	for b in $ScrollContainer/recorder_container.Toggled_buttons:
+		b.playing = true
+		pass
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame
 func _process(delta: float) -> void:
 	pass

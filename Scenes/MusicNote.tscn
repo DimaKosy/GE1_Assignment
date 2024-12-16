@@ -3,4 +3,6 @@
 [ext_resource type="Script" path="res://Scenes/music_note.gd" id="1_lm7fu"]
 
 [node name="MusicNote" type="Button"]
+focus_mode = 1
+action_mode = 0
 script = ExtResource("1_lm7fu")
