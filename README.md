@@ -11,9 +11,9 @@
     * Play
     * Clear
 + Concurrent playing of music Notes and Recorder
-+ States: Toggled, Saved, Empty
+    * States: Toggled, Saved, Empty
 + Playing multiple notes at once
-+ <Godot uses mouse emulation for touch, unable To do with redesign>
+    * <Godot uses mouse emulation for touch, unable To do with redesign>
 
 
 
