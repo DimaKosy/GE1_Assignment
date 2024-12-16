@@ -5,11 +5,11 @@
 + Touch input
 + Android porting
 + Music notes
-⋅⋅* Keys holding showing note and frequency 
+    * Keys holding showing note and frequency 
 + Music recorder
-⋅⋅* Save
-⋅⋅* Play
-⋅⋅* Clear
+    * Save
+    * Play
+    * Clear
 + Concurrent playing of music Notes and Recorder
 + States: Toggled, Saved, Empty
 + Playing multiple notes at once
