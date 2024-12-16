@@ -31,6 +31,10 @@
 ![](Files/uml.jpg)
 
 
+### How to use
+
+Can be ran through godot or on an android device by installing the GE1_Assignment.apk on the device
+
 
 
 # BRIEF
